@@ -29,7 +29,6 @@ $cmake_args = @(
   '-G',
   "MinGW Makefiles",
   "-DBOOST_ROOT=`"$toolsDir\$boostPkg`"",
-  "-DBOOST_STATIC=ON",
   "-DYAMLCPP_ROOT=`"$toolsDir\$yamlPkg`"",
   "-DCMAKE_INSTALL_PREFIX=`"$sourceDir`"",
   "-DCMAKE_PREFIX_PATH=`"$toolsDir\$curlPkg;$toolsDir\pcp-client`"",

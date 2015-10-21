@@ -86,6 +86,7 @@ Kernel.system("scp #{File.join(SCRIPT_ROOT, 'windows-env.ps1')} Administrator@#{
 fail "Copying windows-env.ps1 to #{hostname} failed" unless $?.success?
 Kernel.system("scp #{File.join(SCRIPT_ROOT, 'windows-toolset.ps1')} Administrator@#{hostname}:/home/Administrator/")
 fail "Copying windows-toolset.ps1 to #{hostname} failed" unless $?.success?
+Kernel.system("scp #{File.join(SCRIPT_ROOT, 'mc.exe')} Administrator@#{hostname}:/cygdrive/c/Windows/System32/")
 
 # Ready the Windows Build Environment, followed by the facter and pxp-agent build scripts
 

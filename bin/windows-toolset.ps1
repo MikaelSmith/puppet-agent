@@ -69,7 +69,7 @@ if ($buildSource) {
   .\bootstrap mingw
   $boost_args = @(
     'toolset=gcc',
-    "--build-type=minimal",
+    "--build-type=complete",
     "install",
     '--with-atomic',
     "--with-chrono",
@@ -148,6 +148,8 @@ if ($buildSource) {
   & 7za x "${curlPkg}.7z" | FIND /V "ing "
 }
 cd $toolsDir
+
+$env:PATH += ";$toolsDir\$boostPkg\lib"
 
 # Download openssl
 Write-Host "Downloading http://buildsources.delivery.puppetlabs.net/windows/openssl/${opensslPkg}.tar.lzma"
